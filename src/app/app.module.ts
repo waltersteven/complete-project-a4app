@@ -31,7 +31,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     FormsModule,
     HttpModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService], //Now we set the service here in order to access from shopping-list component and recipes component.
   bootstrap: [AppComponent]
 })
 export class AppModule { }

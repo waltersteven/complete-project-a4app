@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../../recipe.model';
 import { RecipeService } from '../../recipe.service';
 
@@ -16,7 +16,7 @@ export class RecipeItemComponent implements OnInit {
   }
 
   onSelected(){
-    this.recipeService.recipeSelected.emit(this.recipe);
+    this.recipeService.recipeSelected.emit(this.recipe); //Instead of emitting from the service itself, we can emit it from here
   }
 
 }
