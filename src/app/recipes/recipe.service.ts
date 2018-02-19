@@ -19,7 +19,7 @@ export class RecipeService {
         new Recipe(
           'Another test recipe',
           'This is simply a test',
-          'http://www.seriouseats.com/recipes/assets_c/2016/03/20160309-peanut-sweet-potato-kale-coconut-soup-stew-19-thumb-1500xauto-430284.jpg',
+          'https://assets.epicurious.com/photos/57c5c6d9cf9e9ad43de2d96e/master/pass/the-ultimate-hamburger.jpg',
         [
           new Ingredient('Buns', 2),
           new Ingredient('Meat', 1)
@@ -38,6 +38,10 @@ export class RecipeService {
 
       getRecipes() {
         return this.recipes.slice(); //slice() returns an array which is a copy of recipes.
+      }
+
+      getRecipe(index: number) {
+        return this.recipes[index];
       }
 
       addIngredientsToShoppingList(ingredients: Ingredient[]){
