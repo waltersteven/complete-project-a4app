@@ -1,12 +1,15 @@
-<app-header (featureSelected) = "onNavigate($event)"></app-header> <!--$event: to get access to any data or access we passed-->
-<div class="container">
+
+<!-- *** VERSIÓN ANTES DE APLICAR ROUTING *** -->
+
+<!-- <app-header (featureSelected) = "onNavigate($event)"></app-header> --> <!--$event: to get access to any data or access we passed-->
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-12">
       <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
       <app-shopping-list  *ngIf="loadedFeature != 'recipe'"></app-shopping-list>  
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Another way -->
 <!-- <app-header (featureSelected) = "loadedFeature = $event"></app-header>
@@ -20,3 +23,13 @@
     </div>
   </div>
 </div> -->
+
+<!-- *** VERSIÓN APLICANDO ROUTING *** -->
+<app-header (featureSelected) = "onNavigate($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
