@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 
@@ -13,7 +13,7 @@ export class RecipeDetailComponent implements OnInit {
   recipe: Recipe;
   id: number;
 
-  constructor(private recipeService: RecipeService, private route: ActivatedRoute) { }
+  constructor(private recipeService: RecipeService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     //retrieving the ID
@@ -28,6 +28,11 @@ export class RecipeDetailComponent implements OnInit {
   
   onAddShoppingList(){
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  }
+
+  onEditRecipe(){
+    // this.router.navigate(['edit'],{relativeTo: this.route});
+    this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route}); //ANOTHER WAY TO REDIRECT: first we go one level up, add this.id and add edit (everything relative to the actual route).
   }
 
 }
