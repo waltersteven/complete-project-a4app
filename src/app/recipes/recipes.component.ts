@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from './recipe.model';
+// import { Recipe } from './recipe.model';
 import { RecipeService } from './recipe.service';
 
 @Component({
@@ -9,16 +9,18 @@ import { RecipeService } from './recipe.service';
   providers: [RecipeService] //it will be shared the same instance in this component and child components.
 })
 export class RecipesComponent implements OnInit {
-  selectedRecipe: Recipe;
+  // selectedRecipe: Recipe;
 
-  constructor(private recipeService: RecipeService){}
+  constructor(){}
 
   ngOnInit() {
-    this.recipeService.recipeSelected.subscribe(
-      (recipe: Recipe) => {
-        this.selectedRecipe = recipe; //we subscribe to the emitter launched on recipe-item.component.ts
-      }
-    ); //to get inform of changes
+    // this.recipeService.recipeSelected.subscribe(
+    //   (recipe: Recipe) => {
+    //     this.selectedRecipe = recipe; //we subscribe to the emitter launched on recipe-item.component.ts
+    //   }
+    // ); //to get inform of changes
+
+
   }
 
 }
